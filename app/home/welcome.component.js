@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./products/products-list.component"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,28 @@ System.register(['angular2/core', "./products/products-list.component"], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, products_list_component_1;
-    var AppComponent;
+    var core_1;
+    var WelcomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (products_list_component_1_1) {
-                products_list_component_1 = products_list_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.pageTitle = 'Acme Product Manager';
+            WelcomeComponent = (function () {
+                function WelcomeComponent() {
+                    this.pageTitle = "Welcome";
                 }
-                AppComponent = __decorate([
+                WelcomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'pm-app',
-                        template: "\n        <div>\n            <h1>{{pageTitle}}</h1>\n            <pm-products></pm-products>\n        </div>\n    ",
-                        directives: [products_list_component_1.ProductsListComponent]
+                        templateUrl: 'app/home/welcome.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], WelcomeComponent);
+                return WelcomeComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("WelcomeComponent", WelcomeComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=welcome.component.js.map

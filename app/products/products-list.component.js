@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./products/products-list.component"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,28 @@ System.register(['angular2/core', "./products/products-list.component"], functio
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, products_list_component_1;
-    var AppComponent;
+    var core_1;
+    var ProductsListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (products_list_component_1_1) {
-                products_list_component_1 = products_list_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.pageTitle = 'Acme Product Manager';
+            ProductsListComponent = (function () {
+                function ProductsListComponent() {
                 }
-                AppComponent = __decorate([
+                ProductsListComponent = __decorate([
                     core_1.Component({
-                        selector: 'pm-app',
-                        template: "\n        <div>\n            <h1>{{pageTitle}}</h1>\n            <pm-products></pm-products>\n        </div>\n    ",
-                        directives: [products_list_component_1.ProductsListComponent]
+                        selector: 'pm-products',
+                        templateUrl: 'app/products/products-list.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], ProductsListComponent);
+                return ProductsListComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("ProductsListComponent", ProductsListComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=products-list.component.js.map

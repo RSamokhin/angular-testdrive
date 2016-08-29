@@ -21,13 +21,18 @@ export class ProductsListComponent  implements OnInit {
     showImage: boolean = false;
     listFilter: string = '';
     products: IProduct[];
+    errorMessage: string;
 
     toggleImage (): void {
         this.showImage = !this.showImage;
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts();
+        this.products = this._productService.getProducts()
+                            .subscribe(
+                                products => this.products = products,
+                                error => this.errorMessage = <any>error
+                            );
 
     }
 

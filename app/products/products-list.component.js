@@ -40,7 +40,9 @@ System.register(['angular2/core', "./products-filter.pipe", "../shared/star.comp
                     this.showImage = !this.showImage;
                 };
                 ProductsListComponent.prototype.ngOnInit = function () {
-                    this.products = this._productService.getProducts();
+                    var _this = this;
+                    this.products = this._productService.getProducts()
+                        .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
                 };
                 ProductsListComponent.prototype.onRatingClicked = function (message) {
                     this.pageTitle = "Product List: " + message;

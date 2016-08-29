@@ -1,5 +1,7 @@
 import {Component} from 'angular2/core'
+
 import {ProductsListComponent} from "./products/products-list.component";
+import {ProductService} from "./products/product.service";
 
 @Component({
     selector: 'pm-app',
@@ -9,7 +11,8 @@ import {ProductsListComponent} from "./products/products-list.component";
             <pm-products></pm-products>
         </div>
     `,
-    directives: [ProductsListComponent ]
+    directives: [ProductsListComponent ],
+    providers: [ProductService]
 })
 
 export class AppComponent {

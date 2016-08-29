@@ -1,4 +1,4 @@
-System.register(['angular2/core', "./products-filter.pipe"], function(exports_1, context_1) {
+System.register(['angular2/core', "./products-filter.pipe", "../shared/star.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "./products-filter.pipe"], function(exports_1,
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, products_filter_pipe_1;
+    var core_1, products_filter_pipe_1, star_component_1;
     var ProductsListComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', "./products-filter.pipe"], function(exports_1,
             },
             function (products_filter_pipe_1_1) {
                 products_filter_pipe_1 = products_filter_pipe_1_1;
+            },
+            function (star_component_1_1) {
+                star_component_1 = star_component_1_1;
             }],
         execute: function() {
             ProductsListComponent = (function () {
@@ -55,12 +58,16 @@ System.register(['angular2/core', "./products-filter.pipe"], function(exports_1,
                 ProductsListComponent.prototype.ngOnInit = function () {
                     console.log('on init');
                 };
+                ProductsListComponent.prototype.onRatingClicked = function (message) {
+                    this.pageTitle = "Product List: " + message;
+                };
                 ProductsListComponent = __decorate([
                     core_1.Component({
                         selector: 'pm-products',
                         templateUrl: 'app/products/products-list.component.html',
                         styleUrls: ['app/products/product-list.component.css'],
-                        pipes: [products_filter_pipe_1.ProductFilterPipe]
+                        pipes: [products_filter_pipe_1.ProductFilterPipe],
+                        directives: [star_component_1.StarComponent]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], ProductsListComponent);

@@ -32,7 +32,7 @@ System.register(["angular2/core", 'angular2/http', 'rxjs/Observable'], function(
                 ProductService.prototype.getProducts = function () {
                     return this._http.get(this._productUrl)
                         .map(function (response) { return response.json(); })
-                        .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+                        .do(function (data) { return console.log('All: ' + data.length); })
                         .catch(this.handleError);
                 };
                 ProductService.prototype.handleError = function (error) {

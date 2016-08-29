@@ -35,13 +35,14 @@ System.register(['angular2/core', "./products-filter.pipe", "../shared/star.comp
                     this.imageMargin = 2;
                     this.showImage = false;
                     this.listFilter = '';
+                    this.products = [];
                 }
                 ProductsListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
                 };
                 ProductsListComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    this.products = this._productService.getProducts()
+                    this._productService.getProducts()
                         .subscribe(function (products) { return _this.products = products; }, function (error) { return _this.errorMessage = error; });
                 };
                 ProductsListComponent.prototype.onRatingClicked = function (message) {

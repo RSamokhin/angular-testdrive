@@ -20,7 +20,7 @@ export class ProductsListComponent  implements OnInit {
     imageMargin: number = 2;
     showImage: boolean = false;
     listFilter: string = '';
-    products: IProduct[];
+    products: IProduct[] = [];
     errorMessage: string;
 
     toggleImage (): void {
@@ -28,11 +28,11 @@ export class ProductsListComponent  implements OnInit {
     }
 
     ngOnInit(): void {
-        this.products = this._productService.getProducts()
-                            .subscribe(
-                                products => this.products = products,
-                                error => this.errorMessage = <any>error
-                            );
+        this._productService.getProducts()
+            .subscribe(
+                products => this.products = products,
+                error => this.errorMessage = <any>error
+            );
 
     }
 
